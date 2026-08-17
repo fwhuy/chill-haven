@@ -5,33 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ChillHaven — A private wellbeing app for iPhone</title>
 <meta name="description" content="A private wellbeing app for 14–17 year olds. Mood, sleep, routines and calm tools, stored only on your iPhone.">
-<meta name="theme-color" content="#f7f7f9">
+<meta name="theme-color" content="#f7f6f3">
+<link rel="icon" href="assets/logo.webp" type="image/webp">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="index.html"><img src="assets/logo.webp" alt="" width="28" height="28">chill haven</a>
+    <a class="brand" href="index.html"><img src="assets/logo.webp" alt="" width="34" height="34">chill haven</a>
     <nav class="nav-links">
       <a class="hide-sm" href="index.html#about">About</a>
       <a href="index.html#features">Features</a>
       <a class="hide-sm" href="index.html#team">Team</a>
       <a href="privacy.html">Privacy</a>
-      <a class="btn" href="support.html#contact">Get in touch</a>
+      <a class="btn btn-dark" href="support.html#contact">Get in touch</a>
     </nav>
   </div>
 </header>
 
 <main>
   <section class="hero">
+    <div class="bloom bloom-peach"></div>
+    <div class="bloom bloom-lav"></div>
     <div class="wrap">
-      <div class="hero-body">
-        <h1>A private place to notice <em>how you're doing.</em></h1>
-        <p>ChillHaven is a wellbeing app for 14&ndash;17 year olds. Record mood, stress, energy, sleep and daily routines in about thirty seconds &mdash; then get on with your day. Everything stays on the phone.</p>
-        <div class="hero-cta">
-          <a class="btn btn-lg" href="#features">See what it does</a>
-          <a class="btn btn-lg btn-ghost" href="privacy.html">How privacy works</a>
+      <div class="hero-grid">
+        <div>
+          <span class="badge">Private by design &middot; iPhone</span>
+          <h1>A private place to notice <em>how you're doing.</em></h1>
+          <p class="hero-sub">ChillHaven is a wellbeing app for 14&ndash;17 year olds. Record mood, stress, energy, sleep and daily routines in about thirty seconds &mdash; then get on with your day. Everything stays on the phone.</p>
+          <div class="hero-cta">
+            <a class="btn btn-coral" href="#features">See what it does &rarr;</a>
+            <a class="btn btn-plain" href="privacy.html">How privacy works</a>
+          </div>
+          <div class="ticks">
+            <span>No account</span><span>No notifications</span><span>No streaks</span>
+          </div>
+        </div>
+        <div class="device">
+          <img src="assets/dashboard.webp" alt="The ChillHaven home screen, showing today's mood, stress, energy and sleep above a seven-day chart." width="720" height="1565">
         </div>
       </div>
     </div>
@@ -41,7 +53,7 @@
     <div class="wrap split reveal">
       <div class="split-head">
         <span class="eyebrow">About</span>
-        <h2>A wellbeing app should ask for less, not more.</h2>
+        <h2>A wellbeing app should ask for <em>less,</em> not more.</h2>
       </div>
       <div class="split-body">
         <p class="lead">Most wellbeing apps open with a sign-up form. Then come the daily reminders, the streak counter, and a dashboard that quietly turns how you feel into a number going up or down.</p>
@@ -56,86 +68,101 @@
     </div>
   </section>
 
-  <section class="section" id="features">
+  <section class="section band-paper" id="features">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">What it does</span>
-        <h2>Five things, and nothing else.</h2>
-        <p class="lede">Each part does one job. There is no feed, no social layer, and nothing that keeps running once you close the app.</p>
+      <div class="section-head center reveal">
+        <span class="eyebrow">A quick look</span>
+        <h2>This is the <em>whole</em> app.</h2>
+        <p class="lede">Five things, each doing one job. No feed, no social layer, nothing that keeps running once you close it.</p>
       </div>
-      <article class="item t-blue reveal" id="check-in">
-        <div class="num">01</div>
+      <article class="item reveal" id="check-in">
+        <div class="item-media">
+          <div class="device"><img src="assets/checkIn.webp" alt="The Check In screen in ChillHaven." width="720" height="1565" loading="lazy"></div>
+        </div>
         <div class="item-copy">
+          <div class="num">01</div>
           <span class="eyebrow">Check In</span>
           <h3>Thirty seconds, then you're done.</h3>
           <p>Mood, stress and energy on a one-to-five scale, with an optional note about the day.</p>
-        </div>
-        <ul>
+          <ul>
             <li>Every scale pairs a number with a written label and its own symbol</li>
             <li>Optional free-text note and feeling tags</li>
             <li>Full history, with any entry deletable</li>
-        </ul>
+          </ul>
+        </div>
       </article>
-      <article class="item t-purple reveal" id="sleep">
-        <div class="num">02</div>
+      <article class="item reveal" id="sleep">
+        <div class="item-media">
+          <div class="device"><img src="assets/sleep.webp" alt="The Sleep screen in ChillHaven." width="720" height="1565" loading="lazy"></div>
+        </div>
         <div class="item-copy">
+          <div class="num">02</div>
           <span class="eyebrow">Sleep</span>
           <h3>Bedtime, wake time, how it went.</h3>
           <p>ChillHaven works out the rest, including the nights that run past midnight.</p>
-        </div>
-        <ul>
+          <ul>
             <li>Duration calculated for you, wrapping correctly across midnight</li>
             <li>Quality recorded on the same one-to-five scale</li>
             <li>Seven-night chart with running averages</li>
-        </ul>
+          </ul>
+        </div>
       </article>
-      <article class="item t-pink reveal" id="routines">
-        <div class="num">03</div>
+      <article class="item reveal" id="routines">
+        <div class="item-media">
+          <div class="device"><img src="assets/routines.webp" alt="The Routines screen in ChillHaven." width="720" height="1565" loading="lazy"></div>
+        </div>
         <div class="item-copy">
+          <div class="num">03</div>
           <span class="eyebrow">Routines</span>
           <h3>No streak to break.</h3>
           <p>The small things you decided were worth doing, ticked off when they are done.</p>
-        </div>
-        <ul>
+          <ul>
             <li>Choose which weekdays each routine applies to</li>
             <li>Optional preferred time, with no notification attached</li>
             <li>Progress shown as a count, never as a streak</li>
-        </ul>
+          </ul>
+        </div>
       </article>
-      <article class="item t-orange reveal" id="calm-tools">
-        <div class="num">04</div>
+      <article class="item reveal" id="calm-tools">
+        <div class="item-media">
+          <div class="device"><img src="assets/calmTools.webp" alt="The Calm Tools screen in ChillHaven." width="720" height="1565" loading="lazy"></div>
+        </div>
         <div class="item-copy">
+          <div class="num">04</div>
           <span class="eyebrow">Calm Tools</span>
           <h3>For when you need to slow down.</h3>
           <p>Three exercises for the moments when you do not want to record anything at all.</p>
-        </div>
-        <ul>
+          <ul>
             <li>Box breathing &mdash; four steady stages with a visible cycle count</li>
             <li>One-minute reset &mdash; a short guided pause ending in one next step</li>
             <li>Reflection &mdash; optional written prompts, saved only if you want them</li>
-        </ul>
+          </ul>
+        </div>
       </article>
-      <article class="item t-blue reveal" id="insights">
-        <div class="num">05</div>
+      <article class="item reveal" id="insights">
+        <div class="item-media">
+          <div class="device"><img src="assets/insights.webp" alt="The Insights screen in ChillHaven." width="720" height="1565" loading="lazy"></div>
+        </div>
         <div class="item-copy">
+          <div class="num">05</div>
           <span class="eyebrow">Insights</span>
           <h3>Trends, in ordinary sentences.</h3>
           <p>Seven and thirty day patterns, written out plainly rather than scored.</p>
-        </div>
-        <ul>
+          <ul>
             <li>Mood, stress and energy charted together over your chosen range</li>
             <li>Plain-language summaries, such as which day read highest</li>
             <li>No score, no ranking, nothing resembling a diagnosis</li>
-        </ul>
+          </ul>
+        </div>
       </article>
     </div>
   </section>
 
-  <section class="section" id="privacy">
+  <section class="section band" id="privacy">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Privacy by design</span>
-        <h2>It never leaves your phone.</h2>
+        <h2>It <em>never</em> leaves your phone.</h2>
         <p class="lede">Not because the app promises not to send anything, but because there is no back end to send it to.</p>
       </div>
       <div class="proof reveal">
@@ -147,61 +174,39 @@
     </div>
   </section>
 
-  <!-- Sample content for the school project mockup. -->
   <section class="section" id="voices">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="section-head center reveal">
         <span class="eyebrow">Feedback</span>
         <h2>What people say.</h2>
       </div>
       <div class="quotes reveal">
         <figure class="quote">
           <blockquote>&ldquo;It doesn't buzz at me or guilt-trip me for missing a day. I check in on the bus and that's it.&rdquo;</blockquote>
-          <figcaption>
-            <span class="avatar">MR</span>
-            <span><span class="who">Mia R.</span><br><span class="role">Year 11 student</span></span>
-          </figcaption>
+          <figcaption><span class="avatar">MR</span><span><span class="who">Mia R.</span><br><span class="role">Year 11 student</span></span></figcaption>
         </figure>
         <figure class="quote">
           <blockquote>&ldquo;Knowing nothing is uploaded is the reason I could recommend it to students at all. That question comes up first, every time.&rdquo;</blockquote>
-          <figcaption>
-            <span class="avatar">DO</span>
-            <span><span class="who">Daniel O.</span><br><span class="role">Wellbeing coordinator</span></span>
-          </figcaption>
+          <figcaption><span class="avatar">DO</span><span><span class="who">Daniel O.</span><br><span class="role">Wellbeing coordinator</span></span></figcaption>
         </figure>
         <figure class="quote">
           <blockquote>&ldquo;No sign-up, no data collection, nothing I had to agree to on my daughter's behalf. That was the whole decision.&rdquo;</blockquote>
-          <figcaption>
-            <span class="avatar">PT</span>
-            <span><span class="who">Priya T.</span><br><span class="role">Parent</span></span>
-          </figcaption>
+          <figcaption><span class="avatar">PT</span><span><span class="who">Priya T.</span><br><span class="role">Parent</span></span></figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <section class="section" id="team">
+  <section class="section band-paper" id="team">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="section-head center reveal">
         <span class="eyebrow">Team</span>
         <h2>Three people, one app.</h2>
       </div>
       <div class="team reveal">
-        <div class="member">
-          <span class="avatar">HH</span>
-          <strong>Huy Ho</strong>
-          <span>Co-founder</span>
-        </div>
-        <div class="member">
-          <span class="avatar">ST</span>
-          <strong>Siyn Tong</strong>
-          <span>Co-founder</span>
-        </div>
-        <div class="member">
-          <span class="avatar">HL</span>
-          <strong>Havertz Le</strong>
-          <span>Co-founder</span>
-        </div>
+        <div class="member"><span class="avatar">HH</span><strong>Huy Ho</strong><span class="role">Co-founder</span></div>
+        <div class="member"><span class="avatar">ST</span><strong>Siyn Tong</strong><span class="role">Co-founder</span></div>
+        <div class="member"><span class="avatar">HL</span><strong>Havertz Le</strong><span class="role">Co-founder</span></div>
       </div>
     </div>
   </section>
@@ -209,7 +214,7 @@
   <section class="section" id="safety">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow" style="color: var(--orange)">Safety</span>
+        <span class="eyebrow" style="color: var(--coral-ink)">Safety</span>
         <h2>If you need help right now.</h2>
       </div>
       <div class="safety-grid reveal">
@@ -224,12 +229,12 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="contact">
     <div class="wrap">
-      <div class="band reveal">
-        <h2>Bringing ChillHaven to your school?</h2>
-        <p>Questions about bringing ChillHaven to your school, or anything else about the app &mdash; get in touch and we'll take it from there.</p>
-        <a class="btn btn-lg" href="support.html#contact">Start a conversation</a>
+      <div class="cta-card reveal">
+        <h2>Bringing ChillHaven to <em>your school?</em></h2>
+        <p>Questions about the app, how it handles information, or getting it in front of your year groups &mdash; get in touch and we'll take it from there.</p>
+        <a class="btn btn-coral btn-lg" href="support.html#contact">Start a conversation &rarr;</a>
       </div>
     </div>
   </section>
@@ -239,7 +244,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="brand" href="index.html"><img src="assets/logo.webp" alt="" width="28" height="28">chill haven</a>
+        <a class="brand" href="index.html"><img src="assets/logo.webp" alt="" width="34" height="34">chill haven</a>
         <p>A private wellbeing app for 14&ndash;17 year olds. iPhone, iOS 17 or later.</p>
       </div>
       <div>
