@@ -200,23 +200,125 @@
   a:hover{color:#7a44cc}
   ::selection{background:#ffd9d3;color:#2c2b33}
   @keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(24px,-20px) scale(1.08)}}
-</style></head>
+</style>
+<style>
+  .ch-bar{background:#2c2b33;color:rgba(255,255,255,.86);font-size:14px}
+  .ch-bar a{display:flex;align-items:center;justify-content:center;gap:12px;
+    max-width:1200px;margin:0 auto;padding:10px 24px;color:inherit;flex-wrap:wrap}
+  .ch-bar a:hover{color:#fff}
+  .ch-bar .tag{background:#995cf2;color:#fff;font-size:11px;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+  .ch-bar .go{color:rgba(255,255,255,.6)}
+
+  .ch-nav-links{display:flex;align-items:center;gap:28px}
+  .ch-link{color:#57565f;font-size:15px;font-weight:500}
+  .ch-link:hover{color:#2c2b33}
+  .ch-link[aria-current="page"]{color:#995cf2}
+
+  .ch-menu{position:relative}
+  .ch-menu-t{appearance:none;border:0;background:none;padding:0;cursor:pointer;
+    display:inline-flex;align-items:center;gap:6px;
+    font:inherit;font-size:15px;font-weight:500;color:#57565f;letter-spacing:inherit}
+  .ch-menu-t:hover,.ch-menu:hover .ch-menu-t,.ch-menu:focus-within .ch-menu-t{color:#2c2b33}
+  .ch-menu-t svg{transition:transform .18s ease}
+  .ch-menu:hover .ch-menu-t svg,.ch-menu:focus-within .ch-menu-t svg{transform:rotate(180deg)}
+
+  .ch-menu-p{position:absolute;top:calc(100% + 14px);left:-20px;z-index:80;
+    width:min(92vw,560px);background:#fff;border:1px solid rgba(44,43,51,.08);
+    border-radius:18px;box-shadow:0 30px 60px -24px rgba(44,43,51,.34);
+    padding:20px;opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity .18s ease,transform .18s ease,visibility .18s}
+  .ch-menu:hover .ch-menu-p,.ch-menu:focus-within .ch-menu-p{opacity:1;visibility:visible;transform:none}
+  .ch-menu-p::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
+  .ch-menu-h{margin:0 0 14px 8px;font-size:11px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:#9a7fd0}
+  .ch-menu-g{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+  .ch-menu-g a{display:flex;gap:12px;padding:10px;border-radius:12px;color:#2c2b33}
+  .ch-menu-g a:hover{background:#f4f1fb;color:#2c2b33}
+  .ch-menu-g strong{display:block;font-size:15px;font-weight:600}
+  .ch-menu-g em{display:block;font-style:normal;font-size:13px;color:#57565f;margin-top:2px}
+  .ch-thumb{flex:none;width:34px;height:46px;border-radius:7px;overflow:hidden;
+    background:linear-gradient(170deg,#fff2ef,#efeafb);border:1px solid rgba(44,43,51,.1);
+    background-size:cover;background-position:center top}
+  .ch-dot{flex:none;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
+    background:#f4f1fb;color:#995cf2;font-size:13px;font-weight:700;align-self:flex-start}
+
+  @media (max-width:920px){
+    .ch-nav-links{gap:16px}
+    .ch-hide-sm{display:none}
+    .ch-menu-p{position:fixed;left:12px;right:12px;width:auto;top:auto;margin-top:14px}
+    .ch-menu-g{grid-template-columns:1fr}
+  }
+  @media (max-width:560px){
+    .ch-nav{padding:12px 16px !important;gap:12px !important}
+    .ch-brand-word{display:none}
+    .ch-nav-links{gap:14px}
+    .ch-menu-t{font-size:14px}
+    .ch-cta{padding:8px 14px !important;font-size:13px !important}
+    .ch-bar a{padding:9px 16px;gap:8px;font-size:13px}
+  }
+</style>
+</head>
 <body>
-<div id="dc-root"><div class="sc-host" data-sc-name="privacy"><div data-dc-tpl="5" style="overflow-x: hidden;"><header data-dc-tpl="6" style="position: sticky; top: 0px; z-index: 60; backdrop-filter: blur(14px); background: rgba(247, 246, 243, 0.78); border-bottom: 1px solid rgba(44, 43, 51, 0.07);">
-  <nav data-dc-tpl="7" style="max-width: 1200px; margin: 0px auto; padding: 14px 24px; display: flex; align-items: center; gap: 24px;">
-    <a data-dc-tpl="8" href="index.html" style="display: flex; align-items: center; gap: 10px; color: rgb(44, 43, 51); font-weight: 600; letter-spacing: -0.01em;">
+<div id="dc-root"><div class="sc-host" data-sc-name="privacy"><div data-dc-tpl="5" style="overflow-x: hidden;"><div class="ch-bar">
+  <a href="index.html#film"><span class="tag">New</span><span>The whole app in thirty seconds.</span><span class="go">Watch &rarr;</span></a>
+</div>
+<header style="position: sticky; top: 0px; z-index: 60; backdrop-filter: blur(14px); background: rgba(247, 246, 243, 0.78); border-bottom: 1px solid rgba(44, 43, 51, 0.07);">
+  <nav class="ch-nav" style="max-width: 1200px; margin: 0px auto; padding: 14px 24px; display: flex; align-items: center; gap: 24px;">
+    <a href="index.html" style="display: flex; align-items: center; gap: 10px; color: rgb(44, 43, 51); font-weight: 600; letter-spacing: -0.01em;">
       <span style="display:grid;place-items:center;width:34px;height:34px;border-radius:11px;overflow:hidden;background:transparent;flex:none;"><img src="assets/mark.webp" alt="" width="34" height="34" style="width:100%;height:100%;object-fit:contain;display:block;"></span>
-      <span data-dc-tpl="10" style="font-size: 18px;">chill haven</span>
+      <span class="ch-brand-word" style="font-size: 18px;">chill haven</span>
     </a>
-    <div data-dc-tpl="11" style="flex: 1 1 0%;"></div>
-    <div data-dc-tpl="12" style="display: flex; align-items: center; gap: 28px;">
-      <a data-dc-tpl="13" href="index.html#about" style="color: rgb(87, 86, 95); font-size: 15px; font-weight: 500;">About</a>
-      <a data-dc-tpl="14" href="index.html#features" style="color: rgb(87, 86, 95); font-size: 15px; font-weight: 500;">Features</a><a href="community.html" style="color: rgb(87, 86, 95); font-size: 15px; font-weight: 500;">Community</a>
-      <a data-dc-tpl="15" href="privacy.html" style="color: rgb(44, 43, 51); font-size: 15px; font-weight: 600;">Privacy</a>
-      <a data-dc-tpl="16" href="index.html#team" style="color: rgb(87, 86, 95); font-size: 15px; font-weight: 500;">Team</a>
-      <a data-dc-tpl="17" href="support.html#contact" style="display: inline-flex; align-items: center; padding: 9px 18px; border-radius: 999px; background: rgb(44, 43, 51); color: rgb(255, 255, 255); font-size: 14px; font-weight: 600;">Get in touch</a>
+    <div style="flex: 1 1 0%;"></div>
+    <div class="ch-nav-links">
+      <div class="ch-menu">
+        <button class="ch-menu-t" type="button">Features<svg width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true"><path d="M1 1.5 5 5.5 9 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="ch-menu-p">
+          <p class="ch-menu-h">Features</p>
+          <div class="ch-menu-g"><a href="check-in.html"><span class="ch-thumb" style="background-image:url(&quot;assets/checkIn.webp&quot;)"></span><span><strong>Check In</strong><em>Thirty seconds, then you're done</em></span></a><a href="sleep.html"><span class="ch-thumb" style="background-image:url(&quot;assets/sleep.webp&quot;)"></span><span><strong>Sleep</strong><em>Bedtime, wake time, how it went</em></span></a><a href="routines.html"><span class="ch-thumb" style="background-image:url(&quot;assets/routines.webp&quot;)"></span><span><strong>Routines</strong><em>No streak to break</em></span></a><a href="calm-tools.html"><span class="ch-thumb" style="background-image:url(&quot;assets/calmTools.webp&quot;)"></span><span><strong>Calm Tools</strong><em>For when you need to slow down</em></span></a><a href="insights.html"><span class="ch-thumb" style="background-image:url(&quot;assets/insights.webp&quot;)"></span><span><strong>Insights</strong><em>Trends, in ordinary sentences</em></span></a></div>
+        </div>
+      </div>
+      <div class="ch-menu">
+        <button class="ch-menu-t" type="button">Company<svg width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true"><path d="M1 1.5 5 5.5 9 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="ch-menu-p">
+          <p class="ch-menu-h">Company</p>
+          <div class="ch-menu-g"><a href="about.html"><span class="ch-dot">A</span><span><strong>About</strong><em>Why the app asks for less</em></span></a><a href="team.html"><span class="ch-dot">T</span><span><strong>Team</strong><em>Three people, one app</em></span></a><a href="community.html"><span class="ch-dot">C</span><span><strong>Community and CSR</strong><em>Our partnership with headspace</em></span></a><a href="support.html"><span class="ch-dot">H</span><span><strong>Help and FAQ</strong><em>Common questions, answered</em></span></a></div>
+        </div>
+      </div>
+      <a class="ch-link ch-hide-sm" href="privacy.html" aria-current="page">Privacy</a>
+      <a class="ch-cta" href="support.html#contact" style="display: inline-flex; align-items: center; padding: 9px 18px; border-radius: 999px; background: rgb(44, 43, 51); color: rgb(255, 255, 255); font-size: 14px; font-weight: 600;">Get in touch</a>
     </div>
-  </nav></header><section data-dc-tpl="18" style="position: relative; overflow: hidden;">
+  </nav>
+</header><section id="by-design" data-dc-tpl="177" id="privacy" style="padding: clamp(72px, 9vw, 130px) 0px; background: linear-gradient(rgb(247, 246, 243), rgb(242, 238, 251));">
+  <div data-dc-tpl="178" style="max-width: 1100px; margin: 0px auto; padding: 0px 24px;">
+    <div data-dc-tpl="179" data-reveal="" style="max-width: 640px; opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);">
+      <p data-dc-tpl="180" style="margin: 0px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(154, 127, 208);">Privacy by design</p>
+      <h2 data-dc-tpl="181" style="margin: 14px 0px 0px; font-family: &quot;Instrument Serif&quot;, serif; font-weight: 400; font-size: clamp(30px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -0.01em;">It never leaves your phone.</h2>
+      <p data-dc-tpl="182" style="margin: 16px 0px 0px; font-size: 17px; color: rgb(87, 86, 95);">Not because the app promises not to send anything, but because there is no back end to send it to.</p>
+    </div>
+    <div data-dc-tpl="183" style="margin: 44px 0px 0px; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
+      <div data-dc-tpl="184" data-reveal="" style="padding: 26px; border-radius: 18px; background: rgb(255, 255, 255); border: 1px solid rgba(44, 43, 51, 0.07); opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);">
+        <svg data-dc-tpl="185" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a7fd0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect data-dc-tpl="186" x="6" y="2" width="12" height="20" rx="3"></rect><path data-dc-tpl="187" d="M11 18h2"></path></svg>
+        <h3 data-dc-tpl="188" style="margin: 16px 0px 6px; font-size: 16px; font-weight: 600;">Stored on device</h3>
+        <p data-dc-tpl="189" style="margin: 0px; font-size: 14px; color: rgb(120, 118, 127); line-height: 1.55;">Entries live in the app's own storage on your iPhone.</p>
+      </div>
+      <div data-dc-tpl="190" data-reveal="" data-reveal-delay="70" style="padding: 26px; border-radius: 18px; background: rgb(255, 255, 255); border: 1px solid rgba(44, 43, 51, 0.07); opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 70ms, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 70ms;">
+        <svg data-dc-tpl="191" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#995cf2" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle data-dc-tpl="192" cx="12" cy="8" r="4"></circle><path data-dc-tpl="193" d="M4 21a8 8 0 0 1 13-6.2"></path><path data-dc-tpl="194" d="M17 17l4 4M21 17l-4 4"></path></svg>
+        <h3 data-dc-tpl="195" style="margin: 16px 0px 6px; font-size: 16px; font-weight: 600;">No account</h3>
+        <p data-dc-tpl="196" style="margin: 0px; font-size: 14px; color: rgb(120, 118, 127); line-height: 1.55;">No email, no password, no profile to create.</p>
+      </div>
+      <div data-dc-tpl="197" data-reveal="" data-reveal-delay="140" style="padding: 26px; border-radius: 18px; background: rgb(255, 255, 255); border: 1px solid rgba(44, 43, 51, 0.07); opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 140ms, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 140ms;">
+        <svg data-dc-tpl="198" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a7fd0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path data-dc-tpl="199" d="M12 3v12"></path><path data-dc-tpl="200" d="M8 11l4 4 4-4"></path><path data-dc-tpl="201" d="M4 21h16"></path></svg>
+        <h3 data-dc-tpl="202" style="margin: 16px 0px 6px; font-size: 16px; font-weight: 600;">Export anytime</h3>
+        <p data-dc-tpl="203" style="margin: 0px; font-size: 14px; color: rgb(120, 118, 127); line-height: 1.55;">Write everything to a JSON file you keep.</p>
+      </div>
+      <div data-dc-tpl="204" data-reveal="" data-reveal-delay="210" style="padding: 26px; border-radius: 18px; background: rgb(255, 255, 255); border: 1px solid rgba(44, 43, 51, 0.07); opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 210ms, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 210ms;">
+        <svg data-dc-tpl="205" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#995cf2" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path data-dc-tpl="206" d="M3 6h18"></path><path data-dc-tpl="207" d="M8 6V4h8v2"></path><path data-dc-tpl="208" d="M6 6l1 14h10l1-14"></path></svg>
+        <h3 data-dc-tpl="209" style="margin: 16px 0px 6px; font-size: 16px; font-weight: 600;">Delete everything</h3>
+        <p data-dc-tpl="210" style="margin: 0px; font-size: 14px; color: rgb(120, 118, 127); line-height: 1.55;">One confirmed action clears every entry.</p>
+      </div>
+    </div>
+  </div></section><section data-dc-tpl="18" style="position: relative; overflow: hidden;">
   <div data-dc-tpl="19" style="position: absolute; inset: 0px; pointer-events: none; z-index: 0;">
     <div data-dc-tpl="20" style="position: absolute; top: -160px; right: -120px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgb(195, 182, 239), transparent 62%); filter: blur(34px); opacity: 0.5; animation: 20s ease-in-out 0s infinite normal none running drift;"></div>
   </div>
@@ -281,17 +383,26 @@
       <p data-dc-tpl="62" style="margin: 0px; color: rgb(87, 86, 95); line-height: 1.7;">Privacy questions can go to the address on the <a data-dc-tpl="63" href="support.html#contact">support page</a>.</p>
     </div>
 
-  </div></section><footer data-dc-tpl="64" style="background: rgb(44, 43, 51); color: rgba(255, 255, 255, 0.72); padding: clamp(48px, 6vw, 72px) 24px 40px;">
-  <div data-dc-tpl="65" style="max-width: 1100px; margin: 0px auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 36px;">
-    <div data-dc-tpl="66">
-      <a data-dc-tpl="67" href="index.html" style="display: flex; align-items: center; gap: 10px; color: rgb(255, 255, 255); font-weight: 600;"><span style="display:grid;place-items:center;width:32px;height:32px;border-radius:10px;overflow:hidden;background:transparent;flex:none;"><img src="assets/mark.webp" alt="" width="32" height="32" style="width:100%;height:100%;object-fit:contain;display:block;"></span>chill haven</a>
-      <p data-dc-tpl="69" style="margin: 16px 0px 0px; font-size: 14px; max-width: 260px; line-height: 1.6;">A private wellbeing app for 14–17 year olds. iPhone, iOS 17 or later.</p>
+  </div></section><footer data-dc-tpl="280" style="background: rgb(44, 43, 51); color: rgba(255, 255, 255, 0.72); padding: clamp(48px, 6vw, 72px) 24px 40px;">
+  <div data-dc-tpl="281" style="max-width: 1100px; margin: 0px auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 36px;">
+    <div data-dc-tpl="282">
+      <a data-dc-tpl="283" href="index.html" style="display: flex; align-items: center; gap: 10px; color: rgb(255, 255, 255); font-weight: 600;"><span style="display:grid;place-items:center;width:32px;height:32px;border-radius:10px;overflow:hidden;background:transparent;flex:none;"><img src="assets/mark.webp" alt="" width="32" height="32" style="width:100%;height:100%;object-fit:contain;display:block;"></span>chill haven</a>
+      <p data-dc-tpl="285" style="margin: 16px 0px 0px; font-size: 14px; max-width: 260px; line-height: 1.6;">A private wellbeing app for 14–17 year olds. iPhone, iOS 17 or later.</p>
     </div>
-    <div data-dc-tpl="70"><p data-dc-tpl="71" style="margin: 0px 0px 14px; font-size: 13px; font-weight: 600; color: rgb(255, 255, 255);">Product</p><div data-dc-tpl="72" style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;"><a data-dc-tpl="73" href="index.html#about" style="color: rgba(255, 255, 255, 0.72);">About</a><a data-dc-tpl="74" href="index.html#features" style="color: rgba(255, 255, 255, 0.72);">Features</a><a data-dc-tpl="75" href="index.html#privacy" style="color: rgba(255, 255, 255, 0.72);">Privacy by design</a></div></div>
-    <div data-dc-tpl="76"><p data-dc-tpl="77" style="margin: 0px 0px 14px; font-size: 13px; font-weight: 600; color: rgb(255, 255, 255);">Company</p><div data-dc-tpl="78" style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;"><a data-dc-tpl="79" href="index.html#team" style="color: rgba(255, 255, 255, 0.72);">Team</a><a href="community.html" style="color: rgba(255, 255, 255, 0.72);">Community and CSR</a><a data-dc-tpl="80" href="index.html#voices" style="color: rgba(255, 255, 255, 0.72);">What people say</a><a data-dc-tpl="81" href="support.html#contact" style="color: rgba(255, 255, 255, 0.72);">Contact</a></div></div>
-    <div data-dc-tpl="82"><p data-dc-tpl="83" style="margin: 0px 0px 14px; font-size: 13px; font-weight: 600; color: rgb(255, 255, 255);">Legal &amp; help</p><div data-dc-tpl="84" style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;"><a data-dc-tpl="85" href="privacy.html" style="color: rgba(255, 255, 255, 0.72);">Privacy policy</a><a data-dc-tpl="86" href="support.html" style="color: rgba(255, 255, 255, 0.72);">Help and FAQ</a><a data-dc-tpl="87" href="index.html#safety" style="color: rgba(255, 255, 255, 0.72);">Crisis contacts</a></div></div>
+    <div data-dc-tpl="286">
+      <p data-dc-tpl="287" style="margin: 0px 0px 14px; font-size: 13px; font-weight: 600; color: rgb(255, 255, 255); letter-spacing: 0.02em;">Product</p>
+      <div data-dc-tpl="288" style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;"><a data-dc-tpl="289" href="about.html" style="color: rgba(255, 255, 255, 0.72);">About</a><a data-dc-tpl="290" href="check-in.html" style="color: rgba(255, 255, 255, 0.72);">Features</a><a data-dc-tpl="291" href="privacy.html#by-design" style="color: rgba(255, 255, 255, 0.72);">Privacy by design</a></div>
+    </div>
+    <div data-dc-tpl="292">
+      <p data-dc-tpl="293" style="margin: 0px 0px 14px; font-size: 13px; font-weight: 600; color: rgb(255, 255, 255); letter-spacing: 0.02em;">Company</p>
+      <div data-dc-tpl="294" style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;"><a data-dc-tpl="295" href="team.html" style="color: rgba(255, 255, 255, 0.72);">Team</a><a href="community.html" style="color: rgba(255, 255, 255, 0.72);">Community and CSR</a><a data-dc-tpl="296" href="about.html#voices" style="color: rgba(255, 255, 255, 0.72);">What people say</a><a data-dc-tpl="297" href="support.html#contact" style="color: rgba(255, 255, 255, 0.72);">Contact</a></div>
+    </div>
+    <div data-dc-tpl="298">
+      <p data-dc-tpl="299" style="margin: 0px 0px 14px; font-size: 13px; font-weight: 600; color: rgb(255, 255, 255); letter-spacing: 0.02em;">Legal &amp; help</p>
+      <div data-dc-tpl="300" style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;"><a data-dc-tpl="301" href="privacy.html" style="color: rgba(255, 255, 255, 0.72);">Privacy policy</a><a data-dc-tpl="302" href="support.html" style="color: rgba(255, 255, 255, 0.72);">Help and FAQ</a><a data-dc-tpl="303" href="index.html#safety" style="color: rgba(255, 255, 255, 0.72);">Crisis contacts</a></div>
+    </div>
   </div>
-  <div data-dc-tpl="88" style="max-width: 1100px; margin: 36px auto 0px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 13px; color: rgba(255, 255, 255, 0.5);">© ChillHaven. Stored on your phone, and nowhere else.</div></footer></div></div></div>
+  <div data-dc-tpl="304" style="max-width: 1100px; margin: 36px auto 0px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 13px; color: rgba(255, 255, 255, 0.5);">© ChillHaven. Stored on your phone, and nowhere else.</div></footer></div></div></div>
 
 
 
