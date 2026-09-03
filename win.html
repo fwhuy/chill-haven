@@ -664,8 +664,10 @@
     var idx = pick();
     // Rest near the edge of the winning wedge, so it drifts to a stop just past
     // a grand prize rather than parking dead centre.
+    var EDGE_MIN = 0.96;
+    var EDGE_RANGE = 0.025;
     var edge = Math.random() < 0.5 ? -1 : 1;
-    var offset = edge * (STEP / 2) * (0.55 + Math.random() * 0.32);
+    var offset = edge * (STEP / 2) * (EDGE_MIN + Math.random() * EDGE_RANGE);
     var turns = 6 + Math.floor(Math.random() * 3);
     var angle = turns * 360 - idx * STEP - offset;
     wheel.style.transform = 'rotate(' + angle + 'deg)';
