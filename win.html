@@ -662,12 +662,11 @@
     spinBtn.textContent = 'Spinning\u2026';
 
     var idx = pick();
-    // Rest near the edge of the winning wedge, so it drifts to a stop just past
-    // a grand prize rather than parking dead centre.
-    var EDGE_MIN = 0.96;
-    var EDGE_RANGE = 0.025;
-    var edge = Math.random() < 0.5 ? -1 : 1;
-    var offset = edge * (STEP / 2) * (EDGE_MIN + Math.random() * EDGE_RANGE);
+    // Rest anywhere inside the winning wedge rather than always against one of
+    // its edges. EDGE_LIMIT keeps the pointer clear of the boundary line so it
+    // never comes to a stop straddling two segments.
+    var EDGE_LIMIT = 0.88;
+    var offset = (Math.random() * 2 - 1) * (STEP / 2) * EDGE_LIMIT;
     var turns = 6 + Math.floor(Math.random() * 3);
     var angle = turns * 360 - idx * STEP - offset;
     wheel.style.transform = 'rotate(' + angle + 'deg)';

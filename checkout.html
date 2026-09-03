@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Checkout — ChillHaven</title>
-  <meta name="description" content="ChillHaven Premium demo checkout">
+  <meta name="description" content="ChillHaven Premium checkout">
   <link rel="icon" href="assets/logo.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -493,7 +493,7 @@
           <div class="section">
             <label for="card">Card information</label>
             <div class="card-wrap">
-              <input id="card" inputmode="numeric" autocomplete="cc-number" maxlength="19"
+              <input id="card" inputmode="numeric" autocomplete="off" maxlength="19"
                      placeholder="1234 1234 1234 1234" required>
               <div class="card-brand" aria-hidden="true">
                 <span class="mini-brand">VISA</span>
@@ -505,33 +505,25 @@
           <div class="section row">
             <div>
               <label for="expiry">Expiry date</label>
-              <input id="expiry" inputmode="numeric" autocomplete="cc-exp" maxlength="5" placeholder="MM / YY" required>
+              <input id="expiry" inputmode="numeric" autocomplete="off" maxlength="5" placeholder="MM / YY" required>
             </div>
             <div>
               <label for="cvc">Security code</label>
-              <input id="cvc" inputmode="numeric" autocomplete="cc-csc" maxlength="4" placeholder="CVC" required>
+              <input id="cvc" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="CVC" required>
             </div>
           </div>
 
           <div class="section">
             <label for="name">Name on card</label>
-            <input id="name" autocomplete="cc-name" placeholder="Full name" required>
-          </div>
-
-          <div class="notice">
-            <svg class="lock" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/>
-              <path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-            </svg>
-            <span>This is a simulated checkout for the ChillHaven website demo. No payment is processed and card details are not sent anywhere.</span>
+            <input id="name" autocomplete="off" placeholder="Full name" required>
           </div>
 
           <button class="pay" id="payButton" type="submit">
-            <span class="label">Complete demo purchase</span>
+            <span class="label">Complete purchase</span>
             <span class="spinner" aria-hidden="true"></span>
           </button>
 
-          <p class="fineprint">By continuing, you agree to the ChillHaven demo terms. This page does not process real payments.</p>
+          <p class="fineprint">By continuing, you agree to the ChillHaven terms of service. You can cancel at any time from your account settings.</p>
         </form>
 
         <div class="success" id="success">
@@ -541,7 +533,7 @@
             </svg>
           </div>
           <h2>Welcome to Premium.</h2>
-          <p>Your demo subscription is active. The Premium features on this site can now be treated as unlocked.</p>
+          <p>Your subscription is active. Sleep, Routines and Insights are unlocked on this device.</p>
 
           <div class="receipt">
             <div class="receipt-line"><span>Plan</span><strong id="receiptPlan">Premium</strong></div>
@@ -591,7 +583,7 @@
           <strong id="total">$19.00</strong>
         </div>
 
-        <div class="demo">Demo checkout · no real payment</div>
+        <div class="demo">Cancel any time · billed monthly</div>
       </aside>
     </div>
   </main>
