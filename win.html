@@ -291,7 +291,24 @@
       <a class="ch-cta" href="support.html#contact" style="display: inline-flex; align-items: center; padding: 9px 18px; border-radius: 999px; background: rgb(44, 43, 51); color: rgb(255, 255, 255); font-size: 14px; font-weight: 600;">Get in touch</a>
     </div>
   </nav>
-</header><section style="padding: clamp(44px, 5.5vw, 76px) 0px clamp(32px, 4vw, 52px); background: linear-gradient(rgb(242, 238, 251), rgb(247, 246, 243));">
+</header><style>
+  @keyframes ch-bulb { 0%,100% { opacity:.32 } 50% { opacity:1 } }
+  #ch-wheel .bulb { animation: ch-bulb 1.6s ease-in-out infinite; }
+  #ch-wheel-glow { transition: opacity .5s ease; }
+  @keyframes ch-fall {
+    0%   { transform: translate3d(0,-10px,0) rotate(0deg); opacity: 1 }
+    100% { transform: translate3d(var(--dx),330px,0) rotate(var(--rot)); opacity: 0 }
+  }
+  .ch-confetti { position:absolute; top:38%; left:50%; width:9px; height:14px;
+    border-radius:2px; pointer-events:none; animation: ch-fall 1.9s cubic-bezier(.2,.6,.5,1) forwards; }
+  @keyframes ch-ready { 0%,100% { transform: scale(1) } 50% { transform: scale(1.045) } }
+  #ch-hub.ready { animation: ch-ready 2.1s ease-in-out infinite; transform-origin: 180px 180px; }
+  @media (prefers-reduced-motion: reduce) {
+    #ch-wheel .bulb, #ch-hub.ready { animation: none }
+    #ch-wheel-spin { transition-duration: .9s !important }
+    .ch-confetti { display: none }
+  }
+</style><section style="padding: clamp(44px, 5.5vw, 76px) 0px clamp(32px, 4vw, 52px); background: linear-gradient(rgb(242, 238, 251), rgb(247, 246, 243));">
   <div style="max-width: 1200px; margin: 0px auto; padding: 0px 24px;">
     <div data-reveal="" style="max-width: 660px; opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);">
       <p style="margin: 0px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(154, 127, 208);">Giveaway</p>
@@ -306,13 +323,55 @@
     <div data-reveal="" style="background: rgb(255, 255, 255); border: 1px solid rgba(44, 43, 51, 0.08); border-radius: 20px; padding: 28px; padding: clamp(24px, 3.5vw, 44px); display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: clamp(28px, 4vw, 52px); align-items: center; opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);">
 
       <div style="display: flex; justify-content: center; position: relative;">
-        <div style="position: relative; width: 320px; max-width: 100%;">
-          <div style="position: absolute; top: -6px; left: 50%; transform: translateX(-50%); z-index: 2; width: 0; height: 0; border-left: 13px solid transparent; border-right: 13px solid transparent; border-top: 22px solid rgb(44, 43, 51);"></div>
-          <svg id="ch-wheel" viewBox="0 0 320 320" width="320" height="320" role="img" aria-label="Prize wheel" style="display:block;max-width:100%;height:auto;">
-      <circle cx="160.0" cy="160.0" r="156.0" fill="#fff" stroke="rgba(44,43,51,.1)"/>
-      <g id="ch-wheel-spin" style="transform-origin: 160.0px 160.0px; transition: transform 5.4s cubic-bezier(.12,.72,.13,1);"><path d="M 160.0 160.0 L 102.60 21.42 A 150.0 150.0 0 0 1 217.40 21.42 Z" fill="#2c2b33" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/><text x="160.00" y="22.00" transform="rotate(-90.00 160.00 22.00)" text-anchor="end" dominant-baseline="middle" fill="#fff" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">iPhone 17 Pro</text><path d="M 160.0 160.0 L 217.40 21.42 A 150.0 150.0 0 0 1 298.58 102.60 Z" fill="#995cf2" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/><text x="257.58" y="62.42" transform="rotate(-45.00 257.58 62.42)" text-anchor="end" dominant-baseline="middle" fill="#fff" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">1 month free</text><path d="M 160.0 160.0 L 298.58 102.60 A 150.0 150.0 0 0 1 298.58 217.40 Z" fill="#2c2b33" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/><text x="298.00" y="160.00" transform="rotate(0.00 298.00 160.00)" text-anchor="end" dominant-baseline="middle" fill="#fff" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">MacBook Air M5</text><path d="M 160.0 160.0 L 298.58 217.40 A 150.0 150.0 0 0 1 217.40 298.58 Z" fill="#b3a6e0" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/><text x="257.58" y="257.58" transform="rotate(45.00 257.58 257.58)" text-anchor="end" dominant-baseline="middle" fill="#fff" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">3 months free</text><path d="M 160.0 160.0 L 217.40 298.58 A 150.0 150.0 0 0 1 102.60 298.58 Z" fill="#2c2b33" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/><text x="160.00" y="298.00" transform="rotate(90.00 160.00 298.00)" text-anchor="end" dominant-baseline="middle" fill="#fff" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">iPad Air</text><path d="M 160.0 160.0 L 102.60 298.58 A 150.0 150.0 0 0 1 21.42 217.40 Z" fill="#995cf2" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/><text x="62.42" y="257.58" transform="rotate(315.00 62.42 257.58)" text-anchor="start" dominant-baseline="middle" fill="#fff" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">Sticker pack</text><path d="M 160.0 160.0 L 21.42 217.40 A 150.0 150.0 0 0 1 21.42 102.60 Z" fill="#2c2b33" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/><text x="22.00" y="160.00" transform="rotate(360.00 22.00 160.00)" text-anchor="start" dominant-baseline="middle" fill="#fff" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">AirPods Pro 3</text><path d="M 160.0 160.0 L 21.42 102.60 A 150.0 150.0 0 0 1 102.60 21.42 Z" fill="#b3a6e0" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/><text x="62.42" y="62.42" transform="rotate(405.00 62.42 62.42)" text-anchor="start" dominant-baseline="middle" fill="#fff" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">1 year free</text></g>
-      <circle cx="160.0" cy="160.0" r="27" fill="#fff" stroke="rgba(44,43,51,.12)"/>
-      <text x="160.0" y="160.0" text-anchor="middle" dominant-baseline="middle" fill="#2c2b33" font-size="12" font-weight="700" font-family="'Space Grotesk', system-ui, sans-serif">SPIN</text>
+        <div id="ch-stage" style="position: relative; width: 340px; max-width: 100%;">
+          <svg width="34" height="42" viewBox="0 0 34 42" style="position: absolute; top: -13px; left: 50%; transform: translateX(-50%); z-index: 3; filter: drop-shadow(0 5px 8px rgba(44,43,51,.35));" aria-hidden="true">
+            <path d="M17 41 4.5 17.5a13.8 13.8 0 1 1 25 0z" fill="#2c2b33"/>
+            <circle cx="17" cy="14" r="5.4" fill="#f0cf8a"/>
+          </svg>
+          <svg id="ch-wheel" viewBox="0 0 360 360" width="360" height="360" role="img" aria-label="Prize wheel" style="display:block;max-width:100%;height:auto;overflow:visible;">
+      <defs>
+        <linearGradient id="g-grand" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#3a3846"/><stop offset="1" stop-color="#1b1a23"/>
+        </linearGradient>
+        <linearGradient id="g-violet" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#a974f6"/><stop offset="1" stop-color="#7a44cc"/>
+        </linearGradient>
+        <linearGradient id="g-lilac" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#c6bbe9"/><stop offset="1" stop-color="#9a8ad0"/>
+        </linearGradient>
+        <linearGradient id="g-peach" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffe3dd"/><stop offset="1" stop-color="#f5b9ad"/>
+        </linearGradient>
+        <linearGradient id="g-rim" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#f0cf8a"/><stop offset="0.5" stop-color="#995cf2"/><stop offset="1" stop-color="#f0cf8a"/>
+        </linearGradient>
+        <radialGradient id="g-sheen" cx="0.35" cy="0.28" r="0.75">
+          <stop offset="0" stop-color="#fff" stop-opacity=".30"/>
+          <stop offset="0.55" stop-color="#fff" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="f-soft" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="7"/>
+        </filter>
+        <filter id="f-drop" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#2c2b33" flood-opacity=".26"/>
+        </filter>
+      </defs>
+
+      <circle id="ch-wheel-glow" cx="180.0" cy="180.0" r="170.0" fill="#995cf2" opacity=".22" filter="url(#f-soft)"/>
+      <circle cx="180.0" cy="180.0" r="171.0" fill="url(#g-rim)" filter="url(#f-drop)"/>
+      <circle cx="180.0" cy="180.0" r="158.0" fill="#17151f"/>
+      <circle class="bulb" cx="180.00" cy="15.00" r="3.4" fill="#fff" style="animation-delay: 0.000s"/><circle class="bulb" cx="222.71" cy="20.62" r="3.4" fill="#fff" style="animation-delay: 0.067s"/><circle class="bulb" cx="262.50" cy="37.11" r="3.4" fill="#fff" style="animation-delay: 0.134s"/><circle class="bulb" cx="296.67" cy="63.33" r="3.4" fill="#fff" style="animation-delay: 0.201s"/><circle class="bulb" cx="322.89" cy="97.50" r="3.4" fill="#fff" style="animation-delay: 0.268s"/><circle class="bulb" cx="339.38" cy="137.29" r="3.4" fill="#fff" style="animation-delay: 0.335s"/><circle class="bulb" cx="345.00" cy="180.00" r="3.4" fill="#fff" style="animation-delay: 0.402s"/><circle class="bulb" cx="339.38" cy="222.71" r="3.4" fill="#fff" style="animation-delay: 0.469s"/><circle class="bulb" cx="322.89" cy="262.50" r="3.4" fill="#fff" style="animation-delay: 0.536s"/><circle class="bulb" cx="296.67" cy="296.67" r="3.4" fill="#fff" style="animation-delay: 0.603s"/><circle class="bulb" cx="262.50" cy="322.89" r="3.4" fill="#fff" style="animation-delay: 0.670s"/><circle class="bulb" cx="222.71" cy="339.38" r="3.4" fill="#fff" style="animation-delay: 0.737s"/><circle class="bulb" cx="180.00" cy="345.00" r="3.4" fill="#fff" style="animation-delay: 0.804s"/><circle class="bulb" cx="137.29" cy="339.38" r="3.4" fill="#fff" style="animation-delay: 0.871s"/><circle class="bulb" cx="97.50" cy="322.89" r="3.4" fill="#fff" style="animation-delay: 0.938s"/><circle class="bulb" cx="63.33" cy="296.67" r="3.4" fill="#fff" style="animation-delay: 1.005s"/><circle class="bulb" cx="37.11" cy="262.50" r="3.4" fill="#fff" style="animation-delay: 1.072s"/><circle class="bulb" cx="20.62" cy="222.71" r="3.4" fill="#fff" style="animation-delay: 1.139s"/><circle class="bulb" cx="15.00" cy="180.00" r="3.4" fill="#fff" style="animation-delay: 1.206s"/><circle class="bulb" cx="20.62" cy="137.29" r="3.4" fill="#fff" style="animation-delay: 1.273s"/><circle class="bulb" cx="37.11" cy="97.50" r="3.4" fill="#fff" style="animation-delay: 1.340s"/><circle class="bulb" cx="63.33" cy="63.33" r="3.4" fill="#fff" style="animation-delay: 1.407s"/><circle class="bulb" cx="97.50" cy="37.11" r="3.4" fill="#fff" style="animation-delay: 1.474s"/><circle class="bulb" cx="137.29" cy="20.62" r="3.4" fill="#fff" style="animation-delay: 1.541s"/>
+      <g id="ch-wheel-spin" style="transform-origin: 180.0px 180.0px; transition: transform 5.6s cubic-bezier(.11,.72,.12,1);">
+        <path id="wedge0" d="M 180.0 180.0 L 122.60 41.42 A 150.0 150.0 0 0 1 237.40 41.42 Z" fill="url(#g-grand)" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path id="wedge1" d="M 180.0 180.0 L 237.40 41.42 A 150.0 150.0 0 0 1 318.58 122.60 Z" fill="url(#g-violet)" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path id="wedge2" d="M 180.0 180.0 L 318.58 122.60 A 150.0 150.0 0 0 1 318.58 237.40 Z" fill="url(#g-grand)" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path id="wedge3" d="M 180.0 180.0 L 318.58 237.40 A 150.0 150.0 0 0 1 237.40 318.58 Z" fill="url(#g-peach)" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path id="wedge4" d="M 180.0 180.0 L 237.40 318.58 A 150.0 150.0 0 0 1 122.60 318.58 Z" fill="url(#g-grand)" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path id="wedge5" d="M 180.0 180.0 L 122.60 318.58 A 150.0 150.0 0 0 1 41.42 237.40 Z" fill="url(#g-violet)" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path id="wedge6" d="M 180.0 180.0 L 41.42 237.40 A 150.0 150.0 0 0 1 41.42 122.60 Z" fill="url(#g-grand)" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path id="wedge7" d="M 180.0 180.0 L 41.42 122.60 A 150.0 150.0 0 0 1 122.60 41.42 Z" fill="url(#g-lilac)" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/>
+        <text x="180.00" y="39.00" transform="rotate(-90.00 180.00 39.00)" text-anchor="end" dominant-baseline="middle" fill="#f0cf8a" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">iPhone 17 Pro<tspan font-size="11" dy="-1"> ✦</tspan></text><text x="279.70" y="80.30" transform="rotate(-45.00 279.70 80.30)" text-anchor="end" dominant-baseline="middle" fill="#fff" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">1 month free</text><text x="321.00" y="180.00" transform="rotate(0.00 321.00 180.00)" text-anchor="end" dominant-baseline="middle" fill="#f0cf8a" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">MacBook Air<tspan font-size="11" dy="-1"> ✦</tspan></text><text x="279.70" y="279.70" transform="rotate(45.00 279.70 279.70)" text-anchor="end" dominant-baseline="middle" fill="#2c2b33" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">Chocolate</text><text x="180.00" y="321.00" transform="rotate(90.00 180.00 321.00)" text-anchor="end" dominant-baseline="middle" fill="#f0cf8a" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">iPad Air<tspan font-size="11" dy="-1"> ✦</tspan></text><text x="80.30" y="279.70" transform="rotate(315.00 80.30 279.70)" text-anchor="start" dominant-baseline="middle" fill="#fff" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">1 month free</text><text x="39.00" y="180.00" transform="rotate(360.00 39.00 180.00)" text-anchor="start" dominant-baseline="middle" fill="#f0cf8a" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">AirPods Pro<tspan font-size="11" dy="-1"> ✦</tspan></text><text x="80.30" y="80.30" transform="rotate(405.00 80.30 80.30)" text-anchor="start" dominant-baseline="middle" fill="#fff" font-size="12.5" font-weight="600" font-family="'Space Grotesk', system-ui, sans-serif">1 year free</text>
+      </g>
+      <circle cx="180.0" cy="180.0" r="150.0" fill="url(#g-sheen)" pointer-events="none"/>
+      <g id="ch-hub" class="ready">
+        <circle cx="180.0" cy="180.0" r="34" fill="#fff" filter="url(#f-drop)"/>
+        <circle cx="180.0" cy="180.0" r="34" fill="none" stroke="url(#g-rim)" stroke-width="2.5"/>
+        <image href="assets/mark.webp" x="163.0" y="159.0" width="34" height="34" preserveAspectRatio="xMidYMid meet"/>
+        <text x="180.0" y="200.0" text-anchor="middle" fill="#2c2b33" font-size="9.5" font-weight="700" letter-spacing="1.4" font-family="'Space Grotesk', system-ui, sans-serif">SPIN</text>
+      </g>
     </svg>
         </div>
       </div>
@@ -369,7 +428,7 @@
 
 <script>
 (function () {
-  var SEGMENTS = [{"short": "iPhone 17 Pro", "weight": 0, "grand": true}, {"short": "1 month Premium", "weight": 32, "grand": false}, {"short": "MacBook Air M5", "weight": 0, "grand": true}, {"short": "3 months Premium", "weight": 24, "grand": false}, {"short": "iPad Air", "weight": 0, "grand": true}, {"short": "Sticker pack", "weight": 26, "grand": false}, {"short": "AirPods Pro 3", "weight": 0, "grand": true}, {"short": "1 year Premium", "weight": 18, "grand": false}];
+  var SEGMENTS = [{"short": "an iPhone 17 Pro", "weight": 0, "grand": true}, {"short": "1 month of Premium", "weight": 34, "grand": false}, {"short": "a MacBook Air M5", "weight": 0, "grand": true}, {"short": "a block of chocolate", "weight": 26, "grand": false}, {"short": "an iPad Air", "weight": 0, "grand": true}, {"short": "1 month of Premium", "weight": 27, "grand": false}, {"short": "AirPods Pro 3", "weight": 0, "grand": true}, {"short": "1 whole year of Premium", "weight": 13, "grand": false}];
   var STEP = 45.0;
   var wheel = document.getElementById('ch-wheel-spin');
   var form = document.getElementById('ch-form');
@@ -428,6 +487,32 @@
     return s;
   }
 
+  // Landing flourish: light up the wedge that won and throw confetti over the wheel.
+  function celebrate(idx) {
+    var wedge = document.getElementById('wedge' + idx);
+    if (wedge) {
+      wedge.setAttribute('stroke', '#f0cf8a');
+      wedge.setAttribute('stroke-width', '4');
+    }
+    var glow = document.getElementById('ch-wheel-glow');
+    if (glow) glow.setAttribute('opacity', '.5');
+
+    var stage = document.getElementById('ch-stage');
+    if (!stage) return;
+    var colours = ['#995cf2', '#b3a6e0', '#ffd9d3', '#f0cf8a', '#2c2b33'];
+    for (var i = 0; i < 44; i++) {
+      var bit = document.createElement('span');
+      bit.className = 'ch-confetti';
+      bit.style.background = colours[i % colours.length];
+      bit.style.setProperty('--dx', (Math.random() * 300 - 150).toFixed(0) + 'px');
+      bit.style.setProperty('--rot', (Math.random() * 900 - 450).toFixed(0) + 'deg');
+      bit.style.animationDelay = (Math.random() * 0.45).toFixed(2) + 's';
+      bit.style.left = (44 + Math.random() * 12).toFixed(1) + '%';
+      stage.appendChild(bit);
+      window.setTimeout(function (el) { return function () { el.remove(); }; }(bit), 2600);
+    }
+  }
+
   var spun = false;
   spinBtn.addEventListener('click', function () {
     if (spun) return;
@@ -445,8 +530,12 @@
     var angle = turns * 360 - idx * STEP - offset;
     wheel.style.transform = 'rotate(' + angle + 'deg)';
 
+    var hub = document.getElementById('ch-hub');
+    if (hub) hub.classList.remove('ready');
+
     var neighbour = SEGMENTS[(idx + (edge > 0 ? 1 : SEGMENTS.length - 1)) % SEGMENTS.length];
     window.setTimeout(function () {
+      celebrate(idx);
       document.getElementById('ch-prize').textContent = SEGMENTS[idx].short;
       document.getElementById('ch-code').textContent = code();
       if (neighbour && neighbour.grand) {
